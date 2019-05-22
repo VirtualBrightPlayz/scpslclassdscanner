@@ -4,17 +4,17 @@ using Smod2.Config;
 using System.Net;
 using System.Net.Sockets;
 
-namespace VirtualBrightPlayz.SCPSL.Mod9
+namespace VirtualBrightPlayz.SCPSL.ClassDScanner
 {
     [PluginDetails(author = "VirtualBrightPlayz",
-        description = "Mod9 desc",
-        id = "virtualbrightplayz.scpsl.mod9",
-        name = "Mod9",
+        description = "CASSIE now scans for SCPs and D-Bois",
+        id = "virtualbrightplayz.scpsl.classdscanner",
+        name = "Class-D Scanner",
         version = "1.0",
         SmodMajor = 3,
         SmodMinor = 0,
         SmodRevision = 0)]
-    public class Mod9 : Plugin
+    public class ClassDScanner : Plugin
     {
 
         public override void OnDisable()
@@ -28,8 +28,8 @@ namespace VirtualBrightPlayz.SCPSL.Mod9
 
         public override void Register()
         {
-            this.AddEventHandlers(new Mod9EventHandler(this));
-            this.AddConfig(new ConfigSetting("dscanner_time", 180f, SettingType.FLOAT, true, "How often (in seconds) to scan for Class-D Personnel"));
+            this.AddEventHandlers(new ClassDScannerEventHandler(this));
+            this.AddConfig(new ConfigSetting("dscanner_time", 180f, true, "How often (in seconds) to scan for Class-D Personnel"));
             this.AddCommand("dscan", new RunCmd(this));
         }
     }

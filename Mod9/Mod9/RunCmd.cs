@@ -1,12 +1,12 @@
 ﻿using Smod2.Commands;
 
-namespace VirtualBrightPlayz.SCPSL.Mod9
+namespace VirtualBrightPlayz.SCPSL.ClassDScanner
 {
     internal class RunCmd : ICommandHandler
     {
-        private Mod9 mod9;
+        private ClassDScanner mod9;
 
-        public RunCmd(Mod9 mod9)
+        public RunCmd(ClassDScanner mod9)
         {
             this.mod9 = mod9;
         }
@@ -23,7 +23,7 @@ namespace VirtualBrightPlayz.SCPSL.Mod9
 
         string[] ICommandHandler.OnCall(ICommandSender sender, string[] args)
         {
-            Mod9EventHandler.pTime = 0;
+            ClassDScannerEventHandler.pTime = 0;
             return new string[] { "Scanning for Class-D" };
         }
     }
